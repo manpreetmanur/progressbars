@@ -1,0 +1,72 @@
+@barBg: #292929;
+@borderColor: #111;
+@overflowColor: #FF0000;
+@barColor: #1a82f7;
+@barText: #FFF;
+@borderRadius: 5px;
+@transitionTime: 0.2s;
+@darkenPercentage: 10%;
+@appFont: Arial, Helvetica, sans-serif;
+
+#container {
+     
+    font-family: @appFont;
+	font-size: 13px;
+	
+	.progressBar {
+		width: 100%;
+		height: 22px;
+		margin: 8px 8px 0px 0px;
+		background: @barBg;
+		border: 1px solid @borderColor;	
+		border-radius: @borderRadius;	
+		-webkit-border-radius: @borderRadius; 
+		-moz-border-radius: @borderRadius; 
+		overflow: hidden;
+		box-shadow: 0 0 @borderRadius #333;	
+		position: relative; 
+	}
+	
+	.bar{
+		height: 100%;
+		-webkit-transition: width @transitionTime;
+		transition: width @transitionTime;
+		transition-timing-function: linear;
+	}
+
+	.overflow-color {
+		background-color: @overflowColor;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken(@overflowColor, @darkenPercentage)), to(@overflowColor)); 
+		background: -webkit-linear-gradient(top, darken(@overflowColor, @darkenPercentage), @overflowColor); 
+		background: -moz-linear-gradient(top, darken(@overflowColor, @darkenPercentage), @overflowColor); 
+		background: -ms-linear-gradient(top, darken(@overflowColor, @darkenPercentage), @overflowColor); 
+		background: -o-linear-gradient(top, darken(@overflowColor, @darkenPercentage), @overflowColor);
+	}
+
+	.bar-color {
+		background-color: @barColor;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(darken(@barColor, @darkenPercentage)), to(@barColor)); 
+		background: -webkit-linear-gradient(top, darken(@barColor, @darkenPercentage), @barColor); 
+		background: -moz-linear-gradient(top, darken(@barColor, @darkenPercentage), @barColor); 
+		background: -ms-linear-gradient(top, darken(@barColor, @darkenPercentage), @barColor); 
+		background: -o-linear-gradient(top, darken(@barColor, @darkenPercentage), @barColor);
+	}
+	
+	.bar-text {
+		color: @barText; 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		width: 30px; 
+		margin: auto; 
+		height: 13px; 
+		right: 0; 
+		bottom: 0;
+	}
+	.button-panel {
+		margin: 8px 8px 0px 0px;
+	}
+	.button-panel  button{
+		margin-left: 5px;
+	}
+}
